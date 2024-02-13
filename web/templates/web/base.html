@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Icons Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.21.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'web/lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'web/css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar Start -->
+    <div class="container-fluid nav-bar p-0">
+        <div class="container-lg p-0">
+            <nav class="navbar navbar-expand-lg bg-secondary navbar-dark">
+                <a href="{% url 'web:homepage' %}" class="navbar-brand">
+                     <img src="{% static 'web/avila.png' %}" alt="Avila" style="max-width: 90px">
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto py-0">
+                        <a href="{% url 'web:homepage' %}" class="nav-item nav-link">Inicio</a>
+                        <a href="{% url 'web:servicios' %}" class="nav-item nav-link">Servicios</a>
+                        <a href="{% url 'web:ocasion' %}" class="nav-item nav-link">Bici-Ocación</a>
+                        <a href="{% url 'web:electrifica' %}" class="nav-item nav-link">Eléctrifica tu bici</a>
+                        <a href="{% url 'web:contacto' %}" class="nav-item nav-link {% block contact_active %}{% endblock %}">Contacto</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Page Content -->
+    <div class="container-fluid">
+        {% block content %}{% endblock %}
+    </div>
+    <!-- End Page Content -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-secondary text-white mt-5 pt-5 px-sm-3 px-md-5">
+        <div class="row pt-5">
+            <div class="col-lg-3 col-md-6 mb-5">
+                <a href="{% url 'web:homepage' %}" class="navbar-brand">
+                    <img src="{% static 'web/avila.png' %}" alt="Avila" style="max-width: 90px">
+                </a>
+                <p>Taller de Reparación de Bicicletas y Patinetes; Venta de Recambios en Barcelona.</p>
+                <div class="d-flex justify-content-start mt-4">
+                    <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="https://www.facebook.com/avilabikesbarcelona/"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="https://www.instagram.com/avilabikesbcn/"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h5 class="font-weight-bold text-primary mb-4">Links</h5>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="text-white mb-2" href="{% url 'web:homepage' %}"><i class="fa fa-angle-right text-primary mr-2"></i>Inicio</a>
+                    <a class="text-white mb-2" href="{% url 'web:servicios' %}"><i class="fa fa-angle-right text-primary mr-2"></i>Servicios</a>
+                    <a class="text-white mb-2" href="{% url 'web:ocasion' %}"><i class="fa fa-angle-right text-primary mr-2"></i>Bici-Ocación</a>
+                    <a class="text-white mb-2" href="{% url 'web:electrifica' %}"><i class="fa fa-angle-right text-primary mr-2"></i>Eléctrifica tu bici</a>
+                    <a class="text-white mb-2" href="{% url 'web:contacto' %}"><i class="fa fa-angle-right text-primary mr-2"></i>Contáctanos</a>
+                    <a class="text-white" href="{% url 'web:politica' %}"><i class="fa fa-angle-right text-primary mr-2"></i>Política</a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h5 class="font-weight-bold text-primary mb-4">Contácta con nosotros</h5>
+                <p><i class="fa fa-map-marker-alt text-primary mr-2"></i>Carrer Provença 512, local 1, 08025, Barcelona, España</p>
+                <p><i class="fa fa-phone-alt text-primary mr-2"></i>+34 686 71 97 66</p>
+                <p><i class="fa fa-envelope text-primary mr-2"></i>barcelona@avilabikes.es</p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid py-4 px-sm-3 px-md-5">
+        <p class="m-0 text-center">
+            &copy; <a class="font-weight-semi-bold" href="#">AVILA BIKES 2024</a>. All Rights Reserved.
+            <a class="font-weight-semi-bold" href="https://github.com/paoladenic/">DENIC</a>
+        </p>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'web/lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'web/lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'web/lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'web/js/main.js' %}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

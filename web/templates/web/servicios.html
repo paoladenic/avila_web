@@ -1,0 +1,66 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+{% block title %}
+    Avila Bikes | Servicios 
+{% endblock %}
+
+{% block content %}
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5 mb-5"style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url({% static 'web/img/header-avila.jpg' %}); background-position: top; background-repeat: no-repeat; background-size: cover;">
+        <h1 class="display-4 text-white mb-3 mt-0 mt-lg-5">Servicios</h1>
+        <div class="d-inline-flex text-white">
+            <p class="m-0"><a class="text-white" href="">Inicio</a></p>
+            <p class="m-0 px-2">/</p>
+            <p class="m-0">Servicios</p>
+        </div>
+    </div>
+    <!-- Page Header Start -->
+
+
+    <!-- Services Start -->
+    <div class="container-fluid pt-5 pb-3">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-6 text-center mb-5">
+                    <large class="bg-primary text-white text-uppercase font-weight-bold px-1">Servicios</large>
+                    <h1 class="mt-2 mb-3">¿Sabes todo lo que ofrecemos en Avila Bikes?</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-5">
+                    <div class="d-flex">
+                        <i class="fa fa-3x fa-bicycle text-primary mr-4"></i>
+                        <div class="d-flex flex-column">
+                            <h4 class="font-weight-bold mb-3">Bicicletas</h4>
+                            <p>Servicios para tu bici</p>
+                            <a class="font-weight-semi-bold" href="{% url 'web:bicicleta' %}">Descúbrelo <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="d-flex">
+                        <i class="fa fa-3x fa-plug text-primary mr-4"></i>
+                        <div class="d-flex flex-column">
+                            <h4 class="font-weight-bold mb-3">Patinetes</h4>
+                            <p>Servicios para tu patiente</p>
+                            <a class="font-weight-semi-bold" href="{% url 'web:patinete' %}">Descúbrelo <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="d-flex">
+                        <i class="fa fa-3x fa-battery-three-quarters text-primary mr-4"></i>
+                        <div class="d-flex flex-column">
+                            <h4 class="font-weight-bold mb-3">Electrificación</h4>
+                            <p>Descubre como podrías electrificar tu bici</p>
+                            <a class="font-weight-semi-bold" href="{% url 'web:electrifica' %}">Ver más <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Services End -->
+{% endblock %}
+

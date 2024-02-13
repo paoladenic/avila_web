@@ -1,0 +1,122 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+{% block title %}
+    Avila Bikes | Servicios Patinetes
+{% endblock %}
+
+{% block content %}
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5 mb-5"style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url({% static 'web/img/header-avila.jpg' %}); background-position: top; background-repeat: no-repeat; background-size: cover;">
+        <h1 class="display-4 text-white mb-3 mt-0 mt-lg-5">Servicios Patinetes</h1>
+        <div class="d-inline-flex text-white">
+            <p class="m-0"><a class="text-white" href="">Inicio</a></p>
+            <p class="m-0 px-2">/</p>
+            <p class="m-0">Servicios Patinetes</p>
+        </div>
+    </div>
+    <!-- Page Header Start -->
+
+
+    <!-- Services Start -->
+    <style>
+        .interlineado-lista li {
+            margin-bottom: 10px;
+        }
+    
+        .negrita-ultimo {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .imagen-servicio {
+            width: 300px;
+            height: auto; 
+        }
+        .titulo-con-margen {
+            margin-top: 10px;
+        }
+    </style>
+
+    <div class="container-fluid pt-5 pb-3">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-6 text-center mb-5">
+                    <large class="bg-primary text-white text-uppercase font-weight-bold px-1">Servicios</large>
+                    <h1 class="mt-2 mb-3">Patinetes</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-5">
+                    <div class="d-flex">
+                        <div class="d-flex flex-column">
+                            <img src="{% static 'web/img/pati-frenos.png' %}" alt="freno" class="img-fluid imagen-servicio">
+                            <h4 class="font-weight-bold mb-3 titulo-con-margen">Ajuste de Frenos</h4>
+                            <ul class="list-unstyled interlineado-lista">
+                                <li><i class="fa fa-angle-double-right"></i> Limpieza y lubricación interna de camisa de freno </li>
+                                <li><i class="fa fa-angle-double-right"></i> Limpieza y lubricación de pinza o brazos de freno (hidráulico y V-brake)</li>
+                                <li><i class="fa fa-angle-double-right"></i> Ajuste de tensión del cable de freno</li>
+                                <li><i class="fa fa-angle-double-right"></i> Apriete de tornillos de disco</li>
+                                <li class="negrita-ultimo"><i></i> SOLO SERVICIO. NO INCLUYE RECAMBIOS</li>
+                            </ul>
+                        </div>    
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="d-flex">
+                        <div class="d-flex flex-column">
+                            <img src="{% static 'web/img/pati-motor.png' %}" alt="motor electrico" class="img-fluid imagen-servicio">
+                            <h4 class="font-weight-bold mb-3 titulo-con-margen">Motor Eléctrico</h4>
+                            <ul class="list-unstyled interlineado-lista">
+                                <li><i class="fa fa-angle-double-right"></i> Limpieza y engrase de piezas de transmisión </li>
+                                <li><i class="fa fa-angle-double-right"></i> Sustitución de rodamientos</li>
+                                <li><i class="fa fa-angle-double-right"></i> Sustitución de planetarios dentados</li>
+                                <li><i class="fa fa-angle-double-right"></i> Apriete y sellado de la tornillería</li>
+                                <li class="negrita-ultimo"><i></i> SOLO SERVICIO. NO INCLUYE RECAMBIOS</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="d-flex">
+                        <div class="d-flex flex-column">
+                            <img src="{% static 'web/img/pati-basico.png' %}" alt="servicio basico" class="img-fluid imagen-servicio">
+                            <h4 class="font-weight-bold mb-3 titulo-con-margen">Básico</h4>
+                            <ul class="list-unstyled interlineado-lista">
+                                <li><i class="fa fa-angle-double-right"></i> Graduación de frenos </li>
+                                <li><i class="fa fa-angle-double-right"></i> Ajuste de presión de neumáticos</li>
+                                <li><i class="fa fa-angle-double-right"></i> Ajuste general de tornillería</li>
+                                <li><i class="fa fa-angle-double-right"></i> Lavado en seco y engrase básico</li>
+                                <li><i class="fa fa-angle-double-right"></i> Comprobación de estado de piezasde desgaste</li>
+                                <li class="negrita-ultimo"><i></i> SOLO SERVICIO. NO INCLUYE RECAMBIOS</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="d-flex">
+                        <div class="d-flex flex-column">
+                            <img src="{% static 'web/img/pati-integral.png' %}" alt="integral" class="img-fluid imagen-servicio">
+                            <h4 class="font-weight-bold mb-3 titulo-con-margen">Integral</h4>
+                            <ul class="list-unstyled interlineado-lista">
+                                <li><i class="fa fa-angle-double-right"></i> Servicio “Ajuste de Frenos" </li>
+                                <li><i class="fa fa-angle-double-right"></i> Ajuste de presión de neumáticos </li>
+                                <li><i class="fa fa-angle-double-right"></i> Ajuste y engrase de tornillería </li>
+                                <li><i class="fa fa-angle-double-right"></i> Lavado en seco y engrase completo </li>
+                                <li><i class="fa fa-angle-double-right"></i> Comprobación de estado de piezasde desgaste</li>
+                                <li><i class="fa fa-angle-double-right"></i> Limpieza y engrase del eje trasero</li>
+                                <li><i class="fa fa-angle-double-right"></i> Limpieza y engrase de la transmisión </li>
+                                <li><i class="fa fa-angle-double-right"></i> Mantenimiento bisagra tipo Xiaomi </li>
+                                <li><i class="fa fa-angle-double-right"></i> limpieza caja batería </li>
+                                <li class="negrita-ultimo"><i></i> SOLO SERVICIO. NO INCLUYE RECAMBIOS</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="list-inline mb-4">
+                <a href="{% url 'web:servicios' %}" class="btn btn-secondary py-md-2 px-md-4 font-weight-semi-bold">Volver</a>
+            </div>
+        </div>
+    </div>
+    <!-- Services End -->
+{% endblock %}

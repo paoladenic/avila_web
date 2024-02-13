@@ -1,0 +1,76 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+{% block title %}
+    Avila Bikes | {{ products.name }} - Detalle del Producto
+{% endblock %}
+
+{% block content %}
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5 mb-5"style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url({% static 'web/img/header-avila.jpg' %}); background-position: top; background-repeat: no-repeat; background-size: cover;">
+        <h1 class="display-4 text-white mb-3 mt-0 mt-lg-5">Bici-Ocasión</h1>
+        <div class="d-inline-flex text-white">
+            <p class="m-0"><a class="text-white" href="">Inicio</a></p>
+            <p class="m-0 px-2">/</p>
+            <p class="m-0">Bici-Ocasión</p>
+        </div>
+    </div>
+    <!-- Page Header Start -->
+
+    <div class="container-fluid pt-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-6 text-center mb-5">
+                    <h4 class="font-weight-bold mb-4">¿Quieres más info?</h4>
+                    <a href="{% url 'web:contacto' %}" class="btn btn-secondary py-md-2 px-md-4 font-weight-semi-bold">Contáctanos</a>
+                </div>
+            </div>
+
+            <div class="card mx-auto" style="width: 23rem;">
+                <a data-toggle="modal" href="#imageModal">
+                    <img src="{{ products.image.url }}" class="card-img-top custom-image" alt="{{ products.name }}">
+                </a>
+                <div class="d-flex flex-column align-items-center justify-content-center bg-primary p-2 text-center">
+                    <h4 class="card-title">{{ products.name }}</h4>
+                </div>
+                <div class="border border-top-0 d-flex flex-column align-items-center py-4">
+                    <p class="card-text">Categoría: {{ products.category }}</p>
+                    <p class="card-text">Condición: {{ products.condition }}</p>
+                    <p class="card-text">{{ products.description1 }}</p>
+                    <p class="card-text">{{ products.description2 }}</p>
+                    <p class="card-text">{{ products.description3 }}</p>
+                    <p class="card-text">{{ products.description4 }}</p>
+                    <p class="card-text">{{ products.description5 }}</p>
+                    <p class="card-text">{{ products.description6 }}</p>
+                    <p class="card-text">Precio: <strong>€{{ products.price }}</strong></p>
+                </div>
+            </div>
+
+            <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="imageModalLabel">{{ products.name }}</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="{{ products.image.url }}" class="img-fluid" alt="{{ products.name }}">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-6 text-center mb-4 mt-4">
+                    <h4 class="font-weight-bold mb-4">¿Quieres más info?</h4>
+                    <a href="{% url 'web:contacto' %}" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold">Contáctanos</a>
+                </div>
+            </div>
+            <a href="{% url 'web:ocasion' %}" class="btn btn-dark">Volver</a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+{% block title %}
+    Avila Bikes | Contáctanos 
+{% endblock %}
+
+{% block content %}
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5 mb-5"style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url({% static 'web/img/header-avila.jpg' %}); background-position: top; background-repeat: no-repeat; background-size: cover;">
+        <h1 class="display-4 text-white mb-3 mt-0 mt-lg-5">Contacto</h1>
+        <div class="d-inline-flex text-white">
+            <p class="m-0"><a class="text-white" href="">Inicio</a></p>
+            <p class="m-0 px-2">/</p>
+            <p class="m-0">Contacto</p>
+        </div>
+    </div>
+    <!-- Page Header Start -->
+
+    <!-- Contact Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="text-center">
+                <small class="bg-primary text-white text-uppercase font-weight-bold text-center px-1">Contácta con nosotros</small>
+                <h1 class="mt-2 mb-5">¿Alguna pregunta?</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="d-flex align-items-center border mb-3 p-4">
+                        <i class="fa fa-2x fa-map-marker-alt text-primary mr-3"></i>
+                        <div class="d-flex flex-column">
+                            <h5 class="font-weight-bold">Direccón</h5>
+                            <p class="m-0">Carrer Provença 512, local 1, 08025, Barcelona, España</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center border mb-3 p-4">
+                        <i class="fa fa-2x fa-envelope-open text-primary mr-3"></i>
+                        <div class="d-flex flex-column">
+                            <h5 class="font-weight-bold">Email</h5>
+                            <p class="m-0">barcelona@avilabikes.es</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center border mb-3 mb-md-0 p-4">
+                        <i class="fas fa-2x fa-phone-alt text-primary mr-3"></i>
+                        <div class="d-flex flex-column">
+                            <h5 class="font-weight-bold">Teléfono</h5>
+                            <p class="m-0">+34 686 71 97 66</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="contact-form">
+                        <div id="success"></div>
+                        <form method="post" action="{% url 'web:contacto' %}">
+                            {% csrf_token %}
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="control-group">
+                                        <input type="text" class="form-control p-4" name="name" placeholder="Tu nombre" required="required" data-validation-required-message="Porfavor introduce tu nombre" />
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="control-group">
+                                        <input type="email" class="form-control p-4" name="email" placeholder="Tu email" required="required" data-validation-required-message="Porfavor introduce tu email" />
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <textarea class="form-control" rows="5" name="message" placeholder="Mensaje" required="required" data-validation-required-message="Porfavor introduce un mensaje"></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary font-weight-semi-bold px-4" style="height: 50px;" type="submit" id="sendMessageButton">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11969.909946094873!2d2.1783706!3d41.4071525!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a36c5bbc953f%3A0x8c53fbe649a3e6aa!2sAvila%20Bikes%20-%20Taller%20de%20bicicleta%20y%20patinete!5e0!3m2!1ses-419!2ses!4v1705444280996!5m2!1ses-419!2ses" width="400" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+{% endblock %}
+

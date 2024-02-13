@@ -1,0 +1,54 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+{% block title %}
+    Avila Bikes | Bici-Ocasión 
+{% endblock %}
+
+{% block content %}
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5 mb-5"style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url({% static 'web/img/header-avila.jpg' %}); background-position: top; background-repeat: no-repeat; background-size: cover;">
+        <h1 class="display-4 text-white mb-3 mt-0 mt-lg-5">Bici-Ocasión</h1>
+        <div class="d-inline-flex text-white">
+            <p class="m-0"><a class="text-white" href="">Inicio</a></p>
+            <p class="m-0 px-2">/</p>
+            <p class="m-0">Bici-Ocasión</p>
+        </div>
+    </div>
+    <!-- Page Header Start -->
+
+    <!-- Pricing Plan Start -->
+    <div class="container-fluid pt-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-6 text-center mb-5">
+                    <large class="d-inline bg-primary text-white text-uppercase font-weight-bold px-1">Bici-Ocasión</large>
+                    <h1 class="mt-2 mb-3">¿Buscas alguna bici o patiente de ocasión verificada por un experto?</h1>
+                    <h4 class="font-weight-bold mb-4">¿Quieres más info?</h4>
+                    <a href="{% url 'web:contacto' %}" class="btn btn-secondary py-md-2 px-md-4 font-weight-semi-bold">Contáctanos</a>
+                </div>
+            </div>
+            
+            <div class="row">
+                {% for product in products %}
+                    <div class="col-md-4 mb-5">
+                        <div class="d-flex flex-column align-items-center justify-content-center bg-primary p-4">
+                            <a href="{% url 'web:product_detail' product.pk %}">
+                                <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                            </a>
+                        </div>
+                        <div class="border border-top-0 d-flex flex-column align-items-center py-4">
+                            <h2 class="display-5 mb-3">{{ product.name }}</h2>
+                            <p>{{ product.category }}</p>
+                            <p>{{ product.condition }}</p>
+                            <h3>€{{ product.price }}</h3>
+                            <a href="{% url 'web:product_detail' product.pk %}"
+                                class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold my-2">Más Info</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- Pricing Plan End -->
+{% endblock %}

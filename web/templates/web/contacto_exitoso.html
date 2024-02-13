@@ -1,0 +1,28 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+{% block title %}
+    Avila Bikes | ¡Gracias por tu mensaje!
+{% endblock %}
+
+{% block content %}
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5 mb-5"style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url({% static 'web/img/header-avila.jpg' %}); background-position: top; background-repeat: no-repeat; background-size: cover;">
+        <h1 class="display-4 text-white mb-3 mt-0 mt-lg-5">¡Gracias!</h1>
+    </div>
+    <!-- Page Header Start -->
+
+
+    <!-- Contact Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="text-center">
+                <large class="bg-primary text-white text-uppercase font-weight-bold text-center px-1">Hemos recibido tu mensaje</large>
+                <h1 class="mt-2 mb-5">En breve nos pondremos en contacto</h1>
+                <a href="{% url 'web:homepage' %}" class="btn btn-secondary py-md-2 px-md-4 font-weight-semi-bold">Inicio</a>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+{% endblock %}

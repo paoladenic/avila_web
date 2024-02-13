@@ -1,0 +1,99 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+{% block title %}
+    Avila Bikes | Eléctrifica tu bici 
+{% endblock %}
+
+{% block content %}
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5 mb-5"style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url({% static 'web/img/header-avila.jpg' %}); background-position: top; background-repeat: no-repeat; background-size: cover;">
+        <h1 class="display-4 text-white mb-3 mt-0 mt-lg-5">Eléctrifica tu bici</h1>
+        <div class="d-inline-flex text-white">
+            <p class="m-0"><a class="text-white" href="">Inicio</a></p>
+            <p class="m-0 px-2">/</p>
+            <p class="m-0">Eléctrifica tu bici</p>
+        </div>
+    </div>
+    <!-- Page Header Start -->
+
+    <!-- About Start -->
+    <div class="container-fluid py-5 text-center">
+        <div class="container">
+            <div class="row align-items-center pb-1">
+                <div class="col-lg-5">
+                    <img class="img-thumbnail p-3" src="{% static 'web/img/electrifica.png' %}" alt="">
+                </div>
+                <div class="col-lg-7 mt-5 mt-lg-0">
+                    <large class="bg-primary text-white text-uppercase font-weight-bold px-1">¿Qué ofrecemos?</large>
+                    <p class="m-0">Transformamos tu bici en un vehículo con motor eléctrico, mediante un KIT DE CONVERSIÓN.</p>
+                    <p class="m-0">Trabajamos con el KIT DE MOTOR DE CENTRAL y tambien con el KIT DE RUEDA. (delantera o trasera).</p>
+                    <p class="m-0">Hacemos adaptaciones personalizadas para cada cliente.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+    
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="d-flex align-items-center border mb-4 mb-lg-0 p-4" style="height: 220px;">
+                <i class="fas fa-2x fa-battery-three-quarters text-primary mr-3"></i>
+                <div class="d-flex flex-column">
+                    <h5 class="font-weight-bold">¿Qué bateria elegir?</h5>
+                    <p class="m-0">A la hora de elegir la batería hay que tener en cuenta el voltaje del motor. Los voltajes más corrientes son de 36V o 48V.</p>
+                    <p class="m-0">Cuanta más capacidad tenga la batería, más kilómetros podrás hacer y menos recargas harás en la batería, lo que alarga su vida útil.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="d-flex align-items-center border mb-4 mb-lg-0 p-4" style="height: 220px;">
+                <i class="fas fa-2x fa-exclamation-triangle text-primary mr-3"></i>
+                <div class="d-flex flex-column">
+                    <h5 class="font-weight-bold">¿Cúal es la normativa actual?</h5>
+                    <p class="m-0">Las bicicletas eléctricas están limitadas por normativa para circular en la vía pública con una velocidad de asistencia al pedaleo de 25Kms/h. Así mismo, la potencia del motor también está limitada a 250W.</p>
+                    <p class="m-0">No está permitido el uso del acelerador.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Start -->
+    <div class="container-fluid pt-5 pb-2 text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mx-auto">
+                    <large class="bg-primary text-white text-uppercase font-weight-bold px-1">¿Qué incluye el kit?</large>
+                    <div class="list-inline mb-4">
+                        <p class="font-weight-semi-bold mb-2"><i class="fa fa-angle-right text-primary mr-2"></i>Motor (central o de rueda)</p>
+                        <p class="font-weight-semi-bold mb-2"><i class="fa fa-angle-right text-primary mr-2"></i>Batería (36v-48v)</p>
+                        <p class="font-weight-semi-bold mb-2"><i class="fa fa-angle-right text-primary mr-2"></i>Controlador</p>
+                        <p class="font-weight-semi-bold mb-2"><i class="fa fa-angle-right text-primary mr-2"></i>Display (pantalla)</p>
+                        <p class="font-weight-semi-bold mb-2"><i class="fa fa-angle-right text-primary mr-2"></i>Sistema de pedaleo asistido (PAS)</p>
+                        <p class="font-weight-semi-bold mb-2"><i class="fa fa-angle-right text-primary mr-2"></i>Cargador</p>
+                        <p class="font-weight-semi-bold mb-2"><i class="fa fa-angle-right text-primary mr-2"></i>Cableado</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<!-- Features End -->
+
+    <!-- Features Start -->
+    <div class="container-fluid pt-5 pb-2 text-center">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 mb-5">
+                <div class="mx-auto">
+                    <large class="bg-primary text-white text-uppercase font-weight-bold px-1">¿Quieres saber más?</large>
+                    <h5 class="font-weight-semi-bold mb-2 text-center">Si estás interesad@, tráenos tu bici y te haremos un presupuesto.</h5>
+                    <div class="list-inline mb-4">
+                        <a href="{% url 'web:contacto' %}" class="btn btn-secondary py-md-2 px-md-4 font-weight-semi-bold">Contáctanos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Features End -->
+    
+{% endblock %}
