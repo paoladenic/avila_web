@@ -56,7 +56,7 @@ def contacto(request):
             email_message.attach_alternative(email_body, "text/html")
             email_message.send()
             messages.success(request, '¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.')
-            return redirect(reverse('web:contacto_exitoso'))
+            return redirect('web:contacto_exitoso')
         else:
             messages.error(request, 'Hubo un error en el formulario. Por favor, corrige los errores e intenta de nuevo.')
     else:

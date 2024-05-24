@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-    Avila Bikes | Contáctanos 
+    Avila Bikes | Contáctanos
 {% endblock %}
 
 {% block content %}
@@ -70,6 +70,13 @@
                             <div class="control-group">
                                 <textarea class="form-control" rows="5" name="message" placeholder="Mensaje" required="required" data-validation-required-message="Porfavor introduce un mensaje"></textarea>
                                 <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                {{ form.captcha }}
+                                <!-- Mensaje de error -->
+                                {% for error in form.captcha.errors %}
+                                    <p class="help-block text-danger">{{ error }}</p>
+                                {% endfor %}
                             </div>
                             <div>
                                 <button class="btn btn-primary font-weight-semi-bold px-4" style="height: 50px;" type="submit" id="sendMessageButton">Enviar</button>

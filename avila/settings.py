@@ -10,9 +10,15 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv('DEBUG')
 # DATABASE_URL = os.getenv('DATABASE_URL')
 
+RECAPTCHA_PUBLIC_KEY = os.getenv('RECAPTCHA_PUBLIC_KEY')
+RECAPTCHA_PRIVATE_KEY = os.getenv('RECAPTCHA_PRIVATE_KEY')
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 ALLOWED_HOSTS = []
+
+# ALLOWED_HOSTS = ['avilabikes.es', 'www.avilabikes.es']
+
 
 # Application definition
 INSTALLED_APPS = [
@@ -22,8 +28,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
     'bootstrap5',
     'web',
+    'django_recaptcha',
 ]
 
 MIDDLEWARE = [
